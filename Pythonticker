@@ -1,0 +1,21 @@
+import yfinance as yf
+
+lookfor = input("Enter Ticker")
+ticker = yf.Ticker(lookfor)
+
+
+details = input("What are you looking for? Business Summary(1), Current Price(2) or both(3)")
+details = details.lower()
+
+
+price = ticker.info['regularMarketPrice']
+currency = ticker.info["currency"]
+summary = (ticker.info['longBusinessSummary'])
+
+
+if details == "1":
+    print(ticker.info['longBusinessSummary'])
+elif details == "2":
+    print("%s %s"  %(price,currency))
+elif details == "3":
+    print("%s Price = %s %s"  %(summary,price,currency))
