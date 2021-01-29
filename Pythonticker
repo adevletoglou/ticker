@@ -41,11 +41,15 @@ elif details == "4":
     print("%s BID = %s %s, ASK = %s %s"  %(summary,bid,currency, ask, currency))
 elif details == "0":
     print("Keyword Mode")
-    keyword = input("Enter keyword")
-    if keyword in ticker.info:
-        print(ticker.info[keyword])
-    else:
-        print("Error Keyword not found")
+    cont = "1"
+    while cont == "1":
+        keyword = input("Enter keyword")
+        if keyword in ticker.info:
+            print(ticker.info[keyword])
+        else:
+            print("Error Keyword not found")
+        cont = input("New Keyword? Yes(1) No(2)")
+    
     
 
     
