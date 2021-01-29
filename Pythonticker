@@ -11,7 +11,6 @@ ticker = yf.Ticker(lookfor)
 
 
 details = input("What are you looking for? Business Summary(1), Current Bid(2), Current Ask(3) or all(4)")
-details = details.lower()
 
 
 bid = ticker.info['bid']
@@ -45,6 +44,4 @@ elif details == "4":
     
 #print(ticker.info)
 
-
- 
 
