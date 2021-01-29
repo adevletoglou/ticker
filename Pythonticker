@@ -46,17 +46,5 @@ elif details == "4":
 #print(ticker.info)
 
 
-
-#price = ticker.info['regularMarketPrice']
-
-#currency = ticker.info["currency"]
-#print("%s %s"  %(price,currency))
-# get stock info
-
-#print(msft.info)
-
-# get historical market data
-#hist = msft.history(period="5d")
-
  
 
