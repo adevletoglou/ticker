@@ -1,6 +1,6 @@
 #you should install yfinance and time if you haven't already to run this program.
 
-pip install yfinance
+#pip install yfinance
 
 import yfinance as yf
 import time
