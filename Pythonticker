@@ -1,20 +1,21 @@
-#you must install yfinance before running this program, using pip
+#you should install yfinance and time if you haven't already to run this program.
 
 pip install yfinance
 
-
-
 import yfinance as yf
+import time
+
 
 lookfor = input("Enter Ticker")
 ticker = yf.Ticker(lookfor)
 
 
-details = input("What are you looking for? Business Summary(1), Current Price(2) or both(3)")
+details = input("What are you looking for? Business Summary(1), Current Bid(2), Current Ask(3) or all(4)")
 details = details.lower()
 
 
-price = ticker.info['regularMarketPrice']
+bid = ticker.info['bid']
+ask = ticker.info['ask']
 currency = ticker.info["currency"]
 summary = (ticker.info['longBusinessSummary'])
 
@@ -22,6 +23,40 @@ summary = (ticker.info['longBusinessSummary'])
 if details == "1":
     print(ticker.info['longBusinessSummary'])
 elif details == "2":
-    print("%s %s"  %(price,currency))
+    n=0
+    while n<=10:
+        ticker = yf.Ticker(lookfor)
+        bid = ticker.info['bid']
+        print("%s %s"  %(bid,currency))
+        n=n+1
+        time.sleep(1)
 elif details == "3":
-    print("%s Price = %s %s"  %(summary,price,currency))
+    n=0
+    while n<=10:
+        ticker = yf.Ticker(lookfor)
+        ask = ticker.info['ask']
+        print("%s %s"  %(ask,currency))
+        n=n+1
+        time.sleep(1)
+elif details == "4":
+    print("%s BID = %s %s, ASK = %s %s"  %(summary,bid,currency, ask, currency))
+    
+
+    
+#print(ticker.info)
+
+
+
+#price = ticker.info['regularMarketPrice']
+
+#currency = ticker.info["currency"]
+#print("%s %s"  %(price,currency))
+# get stock info
+
+#print(msft.info)
+
+# get historical market data
+#hist = msft.history(period="5d")
+
+ 
+
