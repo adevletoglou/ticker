@@ -1,3 +1,9 @@
+#you must install yfinance before running this program, using pip
+
+pip install yfinance
+
+
+
 import yfinance as yf
 
 lookfor = input("Enter Ticker")
