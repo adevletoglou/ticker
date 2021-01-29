@@ -10,7 +10,7 @@ lookfor = input("Enter Ticker")
 ticker = yf.Ticker(lookfor)
 
 
-details = input("What are you looking for? Business Summary(1), Live Bid(2), Live Ask(3), all(4), or other(0)")    
+details = input("What are you looking for? Business Summary(1), Live Bid(2), Live Ask(3), Combo(4), or other(0)")    
 
 
 bid = ticker.info['bid']
@@ -46,13 +46,17 @@ elif details == "0":
         for key in ticker.info:
             print(key)
         keyword = input("Enter keyword or 'help' to display options")
-    else:
-        while keyword != "done":
+    elif keyword.lower()!= 'help':
+        while keyword.lower() != "done":
             if keyword in ticker.info:
                 print("\n",ticker.info[keyword])
-            else:
+            elif keyword.lower() == 'help':
+                for key in ticker.info:
+                    print(key)
+                #keyword = input("Enter keyword or 'help' to display options")
+            elif keyword not in ticker.info:
                 print("Error Keyword not found")
-            keyword = input("New Keyword? - 'done' to stop")
+            keyword = input("New Keyword? - 'done' to stop, 'help' to display options")
             keyword = keyword.lower()
     
 
