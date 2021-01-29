@@ -10,7 +10,7 @@ lookfor = input("Enter Ticker")
 ticker = yf.Ticker(lookfor)
 
 
-details = input("What are you looking for? Business Summary(1), Current Bid(2), Current Ask(3), all(4), or other(0)")    
+details = input("What are you looking for? Business Summary(1), Live Bid(2), Live Ask(3), all(4), or other(0)")    
 
 
 bid = ticker.info['bid']
